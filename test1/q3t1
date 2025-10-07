@@ -1,0 +1,15 @@
+def convert_distance(kilometers):
+    meters = kilometers * 1000
+    centimeters = kilometers * 100000
+    return meters, centimeters
+
+# Input from user
+print("Distance Converter")
+km = float(input("Enter distance in kilometers: "))
+
+# Conversion
+meters, centimeters = convert_distance(km)
+
+# Output results
+print(f"\nDistance in meters: {meters:.2f} m")
+print(f"Distance in centimeters: {centimeters:.2f} cm")
