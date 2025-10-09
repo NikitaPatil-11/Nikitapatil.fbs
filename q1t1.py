@@ -1,42 +1,35 @@
-#programme to find area and parameter of following dia.
-import math
+#wap to find the area and perimeter of give fig (accept length, breadth, radius)
+# It is a square+half circle
 
-def rectangle_area(length, width):
-    return length * width
+# Program: Combined area and perimeter of a 3-sided square and a half-circle
 
-def rectangle_perimeter(length, width):
-    return 2 * (length + width)
+# --- Square with 3 sides 
+side = float(input("Enter the side of the square: "))
 
-def half_circle_area(radius):
-    return (math.pi * radius ** 2) / 2
+# Square calculations
+square_area = side ** 2                # same area formula
+square_perimeter = 3 * side            # only 3 sides instead of 4
 
-def half_circle_perimeter(radius):
-    # Perimeter includes the curved part and the diameter
-    return math.pi * radius + 2 * radius
+# --- Half Circle ---
+radius = float(input("\nEnter the radius of the circle: "))
 
-# Input from user
-print("Enter dimensions for the rectangle:")
-length = float(input("Length: "))
-width = float(input("Width: "))
+# Area of half circle = (1/2) * π * r²
+# Perimeter = πr + 2r  (half circumference + diameter)
+half_circle_area = 0.5 * 3.142 * radius ** 2
+half_circle_perimeter = 3.142 * radius + 2 * radius
 
-print("\nEnter radius for the half circle:")
-radius = float(input("Radius: "))
+# --- Combined Results ---
+total_area = square_area + half_circle_area
+total_perimeter = square_perimeter + half_circle_perimeter
 
-# Rectangle calculations
-rect_area = rectangle_area(length, width)
-rect_perimeter = rectangle_perimeter(length, width)
-
-# Half circle calculations
-half_area = half_circle_area(radius)
-half_perimeter = half_circle_perimeter(radius)
-
-# Output results
+# --- Display results ---
 print("\n--- Results ---")
-print(f"Rectangle Area: {rect_area:.2f}")
-print(f"Rectangle Perimeter: {rect_perimeter:.2f}")
-print(f"Half Circle Area: {half_area:.2f}")
-print(f"Half Circle Perimeter: {half_perimeter:.2f}")
+print(f"Square area = {square_area:.2f}")
+print(f"Half circle area = {half_circle_area:.2f}")
+print(f"Total area = {total_area:.2f}")
 
-
+print(f"\nSquare perimeter (3 sides) = {square_perimeter:.2f}")
+print(f"Half circle perimeter = {half_circle_perimeter:.2f}")
+print(f"Total perimeter = {total_perimeter:.2f}")
 
 
